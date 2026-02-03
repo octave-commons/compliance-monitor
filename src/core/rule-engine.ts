@@ -60,6 +60,7 @@ export abstract class BaseComplianceRule {
 
 export class SecurityRule extends BaseComplianceRule {
   async execute(context: RuleContext): Promise<RuleResult> {
+    void context;
     const { result, duration } = await this.measureExecution(async () => {
       return this.performSecurityCheck();
     });
@@ -152,6 +153,7 @@ export class SecurityRule extends BaseComplianceRule {
 
 export class PerformanceRule extends BaseComplianceRule {
   async execute(context: RuleContext): Promise<RuleResult> {
+    void context;
     const { result, duration } = await this.measureExecution(async () => {
       return this.performPerformanceCheck();
     });
@@ -202,6 +204,7 @@ export class PerformanceRule extends BaseComplianceRule {
 
 export class DataPrivacyRule extends BaseComplianceRule {
   async execute(context: RuleContext): Promise<RuleResult> {
+    void context;
     const { result, duration } = await this.measureExecution(async () => {
       return this.performPrivacyCheck();
     });
